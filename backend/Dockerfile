@@ -1,4 +1,6 @@
-FROM node:14-alpine3.12
+FROM node:18-alpine
+WORKDIR /app
 COPY . .
+RUN npm ci
 EXPOSE 4000
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
